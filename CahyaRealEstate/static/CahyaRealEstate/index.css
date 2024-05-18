@@ -1,0 +1,241 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Josefin Sans';
+    box-sizing: border-box;
+}
+
+#splash {
+    z-index: 10;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    display: none;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    background-color: #272727;
+    transition: opacity .5s ease-out, visibility .5s ease-out;
+}
+
+.splash-logo, .splash-establish-date{
+    animation: fade-in 3s ease, scale-up 3s ease;
+}
+
+.splash-establish-date {
+    bottom: 2rem;
+    color: #DAAB07;
+    position: absolute;
+    font-family: 'Cinzel';
+}
+
+header {
+    height: 90vh;
+    position: relative;
+    background: url(images/header-background.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.header-container {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #272727, transparent);
+}
+
+nav {
+    z-index: 3;
+    height: 7rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-block {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.logo-block img {
+    width: 100%;
+    object-fit: contain;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    height: max-content;
+}
+
+.nav-item {
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+
+.nav-link {
+    color: #DAAB07;
+    position: relative;
+    text-transform: uppercase;
+    font-family: 'Josefin Sans';
+    transition: transform .3s ease;
+}
+
+.nav-link.buy {
+    width: 6rem;
+    height: 2.7rem;
+    display: flex;
+    color: #272727;
+    align-items: center;
+    border-radius: .4rem;
+    justify-content: center;
+    background-color: #DAAB07;
+    border: .15rem solid #DAAB07;
+    transition: background-color .3s ease, color .3s ease;
+}
+
+.nav-link.buy:hover {
+    transform: none;
+    background: none;
+}
+
+.nav-link.rent {
+    width: 6rem;
+    height: 2.7rem;
+    display: flex;
+    color: #DAAB07;
+    align-items: center;
+    border-radius: .4rem;
+    justify-content: center;
+    background: none;
+    border: .15rem solid #DAAB07;
+    transition: background-color .3s ease, color .3s ease;
+}
+
+.nav-link.rent:hover {
+    transform: none;
+    color: #22264D;
+    background-color: #DAAB07;
+}
+
+.nav-link.buy::after, .nav-link.rent::after {
+    display: none;
+}
+
+.nav-link:hover {
+    color: #DAAB07;
+    transform: translateX(.5rem);
+}
+
+.nav-link::after {
+    left: 0;
+    width: 0;
+    bottom: 0;
+    height: 2px;
+    content: '';
+    position: absolute;
+    background-color: #DAAB07;
+    transition: width .3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    height: calc(100% - 7rem);
+}
+
+.header-tagline {
+    width: 50%;
+    display: flex;
+    font-size: 7rem;
+    color: #DAAB07;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header-tagline span {
+    font-weight: 700;
+    font-style: italic;
+}
+
+.header-search {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#header-form {
+    flex: .5;
+    border: .2rem solid #DAAB07;
+}
+
+.search-sep {
+    flex: .12;
+    display: flex;
+    font-size: 2rem;
+    color: #DAAB07;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-sep::before {
+    left: 0;
+    top: 50%;
+    width: 45%;
+    content: '';
+    height: 3px;
+    position: absolute;
+    transform: translateY(-50%);
+    background-color: #DAAB07;
+}
+
+.search-sep::after {
+    right: 0;
+    top: 50%;
+    width: 45%;
+    content: '';
+    height: 3px;
+    position: absolute;
+    transform: translateY(-50%);
+    background-color: #DAAB07;
+}
+    
+.header-button-wrapper {
+    flex: .18;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-button {
+    width: 16rem;
+    display: flex;
+    height: 5.6rem;
+    font-size: 2rem;
+    color: #272727;
+    border-radius: 1rem;
+    align-items: center;
+    text-decoration: none;
+    justify-content: center;
+    background-color: #DAAB07;
+    border: .2rem solid #DAAB07;
+    transition: background-color .3s ease, color .3s ease;
+}
+
+.header-button:hover {
+    color: #DAAB07;
+    background-color: transparent;
+}
+
+#listings {
+    height: 100vh;
+    background-color: #272727;
+}
