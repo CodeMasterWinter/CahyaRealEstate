@@ -40,19 +40,22 @@
                 </a>
                 <ul class="nav-list p-0 m-0">
                     <li class="nav-item">
-                        <a href="{% url 'home' %}" class="nav-link mx-4">home</a>
+                        <a href="{% url 'home' %}" class="nav-link mx-4" data-title="Home">home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link mx-4">about</a>
+                        <a href="#" class="nav-link mx-4" data-title="About">about</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link mx-4">contact</a>
+                        <a href="#" class="nav-link mx-4" data-title="Contact">contact</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link buy mx-2">buy</a>
+                        <a href="#" class="nav-link mx-4" data-title="Buy">buy</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link rent mx-2">rent</a>
+                        <a href="#" class="nav-link mx-4" data-title="Rent">rent</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link sell mx-4" data-title="Sell">sell</a>
                     </li>
                 </ul>
             </nav>
@@ -74,7 +77,18 @@
             </div>
         </div>
     </header>
-    <section id="listings"></section>
+    <section id="listings">
+        <div class="container-xl listings-container">
+            <h1 class="listings-header py-4">Featured Listings</h1>
+            <div class="row listings-grid">
+                {% for listing in listings %}
+                <div class="listing-card col-3">
+                    {{listing}}
+                </div>
+                {% endfor%}
+            </div>
+        </div>
+    </section>
 
     <script src="https://unpkg.com/lenis@1.0.45/dist/lenis.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>

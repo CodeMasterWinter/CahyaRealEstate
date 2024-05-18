@@ -19,3 +19,14 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // Hide the splash screen after 5 seconds
 setTimeout(hideSplashScreen, 5000);
+
+// setting active link color
+
+var navLinks = document.querySelectorAll('.nav-link');
+const page_title = "{{ page_title }}"
+
+navLinks.forEach(function(link) {
+    if (link.getAttribute('data-title') === page_title) {
+        link.style.color = "#DAAB07";
+    }
+});

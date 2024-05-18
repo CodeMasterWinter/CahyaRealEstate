@@ -75,18 +75,18 @@ nav {
 }
 
 .nav-link {
-    color: #DAAB07;
+    color: #ffffff;
     position: relative;
     text-transform: uppercase;
     font-family: 'Josefin Sans';
-    transition: transform .3s ease;
+    transition: transform .3s ease, color .3s ease;
 }
 
-.nav-link.buy {
+.nav-link.sell {
     width: 6rem;
     height: 2.7rem;
     display: flex;
-    color: #272727;
+    color: #ffffff;
     align-items: center;
     border-radius: .4rem;
     justify-content: center;
@@ -95,31 +95,14 @@ nav {
     transition: background-color .3s ease, color .3s ease;
 }
 
-.nav-link.buy:hover {
+.nav-link.sell:hover {
     transform: none;
-    background: none;
-}
-
-.nav-link.rent {
-    width: 6rem;
-    height: 2.7rem;
-    display: flex;
     color: #DAAB07;
-    align-items: center;
-    border-radius: .4rem;
-    justify-content: center;
     background: none;
-    border: .15rem solid #DAAB07;
-    transition: background-color .3s ease, color .3s ease;
+    
 }
 
-.nav-link.rent:hover {
-    transform: none;
-    color: #22264D;
-    background-color: #DAAB07;
-}
-
-.nav-link.buy::after, .nav-link.rent::after {
+.nav-link.sell::after {
     display: none;
 }
 
@@ -153,13 +136,14 @@ nav {
     width: 50%;
     display: flex;
     font-size: 7rem;
-    color: #DAAB07;
+    color: #ffffff;
     flex-direction: column;
     justify-content: center;
 }
 
 .header-tagline span {
     font-weight: 700;
+    color: #DAAB07;
     font-style: italic;
 }
 
@@ -238,4 +222,18 @@ nav {
 #listings {
     height: 100vh;
     background-color: #272727;
+}
+
+.listings-container {
+    height: 100%;
+}
+
+.listings-header {
+    color: #DAAB07;
+}
+
+.listing-card {
+    height: 26rem;
+    color: #ffffff;
+    border: 1px solid #DAAB07;
 }
