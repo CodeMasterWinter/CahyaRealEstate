@@ -1,0 +1,83 @@
+nav {
+    z-index: 3;
+    height: 7rem;
+    display: flex;
+    align-items: center;
+    background-color: #DAAB07;
+    justify-content: space-between;
+}
+
+.logo-block {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.logo-block img {
+    width: 100%;
+    object-fit: contain;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    height: max-content;
+}
+
+.nav-item {
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+
+.nav-link {
+    color: #ffffff;
+    position: relative;
+    text-transform: uppercase;
+    font-family: 'Josefin Sans';
+    transition: transform .3s ease, color .3s ease;
+}
+
+.nav-link.sell {
+    width: 6rem;
+    height: 2.7rem;
+    display: flex;
+    color: #DAAB07;
+    align-items: center;
+    border-radius: .4rem;
+    justify-content: center;
+    background-color: #ffffff;
+    border: .15rem solid #ffffff;
+    transition: background-color .3s ease, color .3s ease;
+}
+
+.nav-link.sell:hover {
+    transform: none;
+    color: #ffffff;
+    background: none;    
+}
+
+.nav-link.sell::after {
+    display: none;
+}
+
+.nav-link:hover {
+    color: #ffffff;
+    transform: translateX(.5rem);
+}
+
+.nav-link::after {
+    left: 0;
+    width: 0;
+    bottom: 0;
+    height: 2px;
+    content: '';
+    position: absolute;
+    background-color: #ffffff;
+    transition: width .3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
