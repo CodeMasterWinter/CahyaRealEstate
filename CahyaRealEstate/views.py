@@ -1,21 +1,71 @@
 import os
+from .forms import ListingForm
 from django.conf import settings
 from django.core.files import File
 from django.shortcuts import render
 from .models import Address, Listing
+from django.http import JsonResponse
 from django.core.files.uploadedfile import SimpleUploadedFile
 
 
 def index(request):
 
     listings = Listing.objects.all()
+    listingform = ListingForm(request.GET or None)
 
     context = {
         'page_title': "Home",
         "listings": listings,
+        "listingform": listingform
     }
 
     return render(request, 'CahyaRealEstate/index.html', context)
+
+
+def search_listings(request):
+
+    form = ListingForm(request.GET or None)
+    listings = Listing.objects.all()
+
+    if form.is_valid():
+        if form.cleaned_data['price_min']:
+            listings = listings.filter(price__gte=form.cleaned_data['price_min'])
+        if form.cleaned_data['price_max']:
+            listings = listings.filter(price__lte=form.cleaned_data['price_max'])
+        if form.cleaned_data['rooms']:
+            listings = listings.filter(rooms=form.cleaned_data['rooms'])
+        if form.cleaned_data['bathrooms']:
+            listings = listings.filter(bathrooms=form.cleaned_data['bathrooms'])
+        if form.cleaned_data['suburb']:
+            listings = listings.filter(address__suburb__icontains=form.cleaned_data['suburb'])
+        if form.cleaned_data['city']:
+            listings = listings.filter(address__city__icontains=form.cleaned_data['city'])
+        if form.cleaned_data['province']:
+            listings = listings.filter(address__province=form.cleaned_data['province'])
+
+    context = {
+        'form': form,
+        'listings': listings,
+        'page_title': 'Search'
+    }
+
+    return render(request, 'CahyaRealEstate/search_listings.html', context)
+
+
+def suggest_locations(request):
+    query = request.GET.get('query', '').strip().lower()
+    if len(query) < 3:
+        return JsonResponse({'suggestions': []})
+
+    # Fetch unique towns, cities, suburbs, and provinces from Address model
+    suggestions = set()
+    address_fields = ['city', 'suburb', 'province']
+    for field in address_fields:
+        suggestions.update(
+            Address.objects.filter(**{f'{field}__icontains': query}).values_list(field, flat=True).distinct()[:5]
+        )
+
+    return JsonResponse({'suggestions': list(suggestions)})
 
 
 def populate_properties(request):

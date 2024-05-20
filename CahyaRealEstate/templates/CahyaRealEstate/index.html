@@ -33,43 +33,97 @@
     </div>
 
     <header id="header">
-        <div class="container-fluid header-container px-5 py-3">
+        <div class="container-fluid header-container p-0">
             <nav>
                 <a href="/" class="logo-block p-3">
                     <img src="{% static 'CahyaRealEstate/images/nav-logo.png' %}">
                 </a>
                 <ul class="nav-list p-0 m-0">
                     <li class="nav-item">
-                        <a href="{% url 'home' %}" class="nav-link mx-4" data-title="Home">home</a>
+                        <a href="{% url 'home' %}" class="nav-link mx-4">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link mx-4" data-title="About">about</a>
+                        <a href="#" class="nav-link mx-4">About</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link mx-4" data-title="Contact">contact</a>
+                        <a href="#" class="nav-link mx-4">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link mx-4" data-title="Buy">buy</a>
+                        <a href="#" class="nav-link mx-4">Buy</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link mx-4" data-title="Rent">rent</a>
+                        <a href="#" class="nav-link mx-4">Rent</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link sell mx-4" data-title="Sell">sell</a>
+                        <a href="#" class="nav-link sell mx-4">Sell</a>
                     </li>
                 </ul>
             </nav>
-            <div class="header-content">
+            <div class="header-content px-5">
                 <h1 class="header-tagline m-0">
                     Making Dreams<br>
                     a reality<br>
                     <span>with Realty</span>
                 </h1>
                 <div class="header-search">
-                    <form id="header-form" action="">
-
+                    <form id="header-form" action="{% url 'search_listings' %}" method="get" onsubmit="return validateForm()">
+                        <h2 class="header-form-title my-3">Search:</h2>
+                        <div class="location-search-box">
+                            <input type="text" id="location_search" name="location" oninput="fetchSuggestions()" autocomplete="off" placeholder="Search for a suburb, city or province">
+                            <div id="suggestions" class="suggestions-box"></div>
+                            <button id="location_submit" type="submit">Search</button>
+                        </div>
+                        <p class="search-sep m-3">OR</p>
+                        <div class="search-parameters">
+                            <div class="search-row first">
+                                <div>
+                                    <label for="id_suburb" class="visually-hidden">Suburb:</label>
+                                    <input type="text" name="suburb" maxlength="255" id="id_suburb" placeholder="Enter suburb...">
+                                </div>
+                                <div>
+                                    <label for="id_city" class="visually-hidden">City:</label>
+                                    <input type="text" name="city" maxlength="255" id="id_city" placeholder="Enter city...">
+                                </div>
+                                <div>
+                                    <label for="id_province" class="visually-hidden">Province:</label>
+                                    <select name="province" id="id_province">
+                                        <option value="" selected="">Province</option>
+                                        <option value="EC">Eastern Cape</option>
+                                        <option value="FS">Free State</option>
+                                        <option value="GP">Gauteng</option>
+                                        <option value="KZN">KwaZulu-Natal</option>
+                                        <option value="LP">Limpopo</option>
+                                        <option value="MP">Mpumalanga</option>
+                                        <option value="NC">Northern Cape</option>
+                                        <option value="NW">North West</option>
+                                        <option value="WC">Western Cape</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="search-row second">
+                                <div>
+                                    <label for="id_price_min" class="visually-hidden">Min Price:</label>
+                                    <input type="number" name="price_min" id="id_price_min" min="1" placeholder="Min price...">
+                                </div>
+                                <div>
+                                    <label for="id_price_max" class="visually-hidden">Max Price:</label>
+                                    <input type="number" name="price_max" id="id_price_max" min="1" placeholder="Max price...">
+                                </div>
+                            </div>
+                            <div class="search-row third">
+                                <div>
+                                    <label for="id_rooms" class="visually-hidden">Rooms:</label>
+                                    <input type="number" name="rooms" id="id_rooms" min="1" placeholder="Number of rooms...">
+                                </div>
+                                <div>
+                                    <label for="id_bathrooms" class="visually-hidden">Bathrooms:</label>
+                                    <input type="number" name="bathrooms" id="id_bathrooms" min="1" placeholder="Number of bathrooms...">
+                                </div>
+                            </div>
+                        </div>
+                        <button id="form_submit" type="submit">Search</button>                      
                     </form>
-                    <p class="search-sep m-0">OR</p>
+                    <p class="header-sep m-0">OR</p>
                     <div class="header-button-wrapper">
                         <a class="header-button" href="#listings">See Listings</a>
                     </div>
@@ -110,6 +164,17 @@
         })
 
         gsap.ticker.lagSmoothing(0)
+    </script>
+    <script>
+                // setting active link color
+        const page_title = "{{ page_title }}";
+        const elements = document.querySelectorAll(".nav-link");
+
+        elements.forEach(element => {
+            if (element.textContent == (page_title)) {
+                element.style.color = '#DAAB07';
+            }
+        });
     </script>
 </body>
 </html>

@@ -4,10 +4,22 @@ from django.db import models
 
 class Address(models.Model):
 
+    PROVINCE_CHOICES = [
+        ('EC', 'Eastern Cape'),
+        ('FS', 'Free State'),
+        ('GP', 'Gauteng'),
+        ('KZN', 'KwaZulu-Natal'),
+        ('LP', 'Limpopo'),
+        ('MP', 'Mpumalanga'),
+        ('NC', 'Northern Cape'),
+        ('NW', 'North West'),
+        ('WC', 'Western Cape'),
+    ]
+
     street = models.CharField(max_length=255)
     suburb = models.CharField(max_length=255)
     city = models.CharField(max_length=255)
-    province = models.CharField(max_length=255)
+    province = models.CharField(max_length=3, choices=PROVINCE_CHOICES)
 
 
 class Listing(models.Model):
