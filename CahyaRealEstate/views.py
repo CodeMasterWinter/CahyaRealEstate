@@ -12,6 +12,7 @@ def index(request):
 
     listings = Listing.objects.all()
     listingform = ListingForm(request.GET or None)
+    nothing = "nothing"
 
     context = {
         'page_title': "Home",
