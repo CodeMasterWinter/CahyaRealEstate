@@ -1,4 +1,5 @@
 import os
+from django.db.models import Q
 from .forms import ListingForm
 from django.conf import settings
 from django.core.files import File
@@ -12,7 +13,6 @@ def index(request):
 
     listings = Listing.objects.all()
     listingform = ListingForm(request.GET or None)
-    nothing = "nothing"
 
     context = {
         'page_title': "Home",
@@ -27,8 +27,20 @@ def search_listings(request):
 
     form = ListingForm(request.GET or None)
     listings = Listing.objects.all()
+    addresses = Address.objects.all()
 
     if form.is_valid():
+        if form.cleaned_data['location_search']:
+
+            province_code = None
+            for code, name in Address.PROVINCE_CHOICES:
+                if name.lower() == form.cleaned_data['location_search'].lower():
+                    province_code = code
+                    break
+
+            if province_code:
+                listings = listings.filter(address__province=province_code)
+
         if form.cleaned_data['price_min']:
             listings = listings.filter(price__gte=form.cleaned_data['price_min'])
         if form.cleaned_data['price_max']:

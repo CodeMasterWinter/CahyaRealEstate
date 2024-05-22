@@ -69,7 +69,7 @@
                     <form id="header-form" action="{% url 'search_listings' %}" method="get" onsubmit="return validateForm()">
                         <h2 class="header-form-title my-3">Search:</h2>
                         <div class="location-search-box">
-                            <input type="text" id="location_search" name="location" oninput="fetchSuggestions()" autocomplete="off" placeholder="Search for a suburb, city or province">
+                            <input type="text" id="location_search" name="location_search" oninput="fetchSuggestions()" autocomplete="off" placeholder="Search for a suburb, city or province">
                             <div id="suggestions" class="suggestions-box"></div>
                             <button id="location_submit" type="submit">Search</button>
                         </div>
