@@ -1,12 +1,50 @@
 import os
-from django.db.models import Q
-from .forms import ListingForm
-from django.conf import settings
-from django.core.files import File
-from django.shortcuts import render
+from django.contrib import messages
+from django.http import HttpResponse
 from .models import Address, Listing
 from django.http import JsonResponse
+from .forms import ListingForm, ContactForm
+from django.shortcuts import render, redirect
+from django.core.mail import send_mail, BadHeaderError
 from django.core.files.uploadedfile import SimpleUploadedFile
+
+
+def home(request):
+
+    if request.method == "POST":
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            sender_name = request.POST['full_name']
+            sender_company = request.POST['company']
+            sender_email = request.POST['email']
+            sender_phone = request.POST['phone']
+            sender_message = request.POST['message']
+            sender_service = request.POST['service']
+            sender_property = request.POST['property']
+
+            try:
+
+                sender_message = f"Email Address: {sender_email}\nPhone: {sender_phone}\n\n{sender_message}"
+                send_mail(
+                    f'''{sender_name} from {sender_company} wants to {sender_service} {sender_property}''',
+                    sender_message,
+                    sender_email,
+                    ['rhulanimogotsi@gmail.com', 'karabomogotsikm@gmail.com']
+                )
+
+                messages.success(request, 'We got your Message! One of our agents will reach out soon!')
+                return redirect('home')
+            except BadHeaderError:
+                return HttpResponse('Invalid Header')
+    else:
+        form = ContactForm()
+
+    context = {
+        'page_title': "Home",
+        "contactform": form
+    }
+
+    return render(request, 'CahyaRealEstate/home.html', context)
 
 
 def index(request):

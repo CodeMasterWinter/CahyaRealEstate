@@ -2,6 +2,30 @@ from django import forms
 from .models import Address, Listing
 
 
+services = [('sell', 'I want to SELL...'),
+            ('buy', 'I want to BUY...'),
+            ('rent_out', "Rent out (I'm an owner)"),
+            ('rent_in', 'I want to rent...'),
+            ]
+
+properties = [('apartment', 'an Apartment'),
+              ('house', 'a House'),
+              ('loft', 'a Loft'),
+              ('commercial', 'a Commercial Property'),
+              ]
+
+
+class ContactForm(forms.Form):
+
+    full_name = forms.CharField(required=True)
+    company = forms.CharField(required=False, label="Company Name (Optional)")
+    email = forms.EmailField(required=True)
+    phone = forms.CharField(required=False, label='Phone Number (Optional)')
+    service = forms.ChoiceField(required=True, choices=services)
+    property = forms.ChoiceField(required=True, choices=properties)
+    message = forms.CharField(widget=forms.Textarea, required=True)
+
+
 class AddressForm(forms.ModelForm):
     class Meta:
         model = Address
