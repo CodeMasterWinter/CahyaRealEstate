@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Josefin Sans';
+    font-family: 'Bebas Neue';
     box-sizing: border-box;
 }
 
@@ -48,7 +48,6 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #CFA18A;
 }
 
 .logo-block {
@@ -76,16 +75,50 @@ nav {
 
 .nav-item {
     display: flex;
+    position: relative;
     text-align: center;
     align-items: center;
 }
 
-.nav-link {
+.sub-list {
+    opacity: 0;
+    left: 2rem;
+    top: 2.4rem;
+    min-width: 12rem;
+    list-style: none;
+    visibility: hidden;
+    position: absolute;
+    border-radius: .2rem;
+    background-color: #f6f4f1;
+    transition: opacity .3s ease, visibility .3s ease;
+}
+
+.sub-nav-link {
+    display: block;
+    color: #CFA18A;
+    font-size: 1.4rem;
+    border-radius: .1rem;
+    text-decoration: none;
+    transition: background-color .3s ease, color .3s ease;
+}
+
+.sub-nav-link:hover { 
+    color: #ffffff;
+    background-color: #CFA18A;
+}
+
+.nav-link, .nav-link:visited {
     color: #ffffff;
     position: relative;
+    font-size: 1.4rem;
     text-transform: uppercase;
-    font-family: 'Josefin Sans';
+    font-family: 'Bebas Neue';
     transition: transform .3s ease, color .3s ease;
+}
+
+.nav-item:hover .sub-list {
+    opacity: 1;
+    visibility: visible;
 }
 
 .nav-link.sell {
@@ -124,7 +157,7 @@ nav {
     height: 2px;
     content: '';
     position: absolute;
-    background-color: #ffffff;
+    background-color: #CFA18A;
     transition: width .3s ease;
 }
 
@@ -178,6 +211,68 @@ nav {
 .header-button:hover {
     color: #CFA18A;
     background-color: #ffffff;
+}
+
+#faqs {
+    height: 100vh;
+    position: relative;
+    background-color: #f6f4f1;
+}
+
+.faqs-header {
+    height: 7rem;
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
+.faqs-container {
+    height: calc(100% - 7rem);
+}
+
+.faqs-logo {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+}
+
+.faqs-logo img {
+    height: 100%;
+    object-fit: contain;
+    transition: transform .3s ease;
+}
+
+.faqs-logo img:hover {
+    transform: scale(.95);
+}
+
+.faqs-title {
+    font-size: 7rem;
+    color: #3d3b3a;
+    text-align: center;
+}
+
+.faqs-explanation {
+    text-align: center;
+}
+
+.faqs-explanation-title {
+    font-size: 3rem;
+    color: #CFA18A;
+}
+
+.faqs-explanation-text {
+    font-size: 2rem;
+}
+
+.faqs-explanation-text span {
+    color: #CFA18A;
+}
+
+.faqs-explanation-text a {
+    color: #CFA18A;
 }
 
 #contact {
@@ -280,4 +375,37 @@ nav {
 .message {
     color: #ffffff;
     font-size: 1.2rem;
+}
+
+@media screen and (max-width: 1366px) {
+    .logo-block, .faqs-logo {
+        margin-inline-start: 2rem;
+    }
+    
+    .header-tagline {
+        font-size: 6rem;
+    }
+
+    .contact-tag {
+        font-size: 7rem;
+    }
+
+    .form-block label {
+        font-size: 1.6rem;
+    }
+
+    .form-block input, 
+    .form-block select, 
+    .form-block textarea {
+        padding: .3rem;
+        font-size: 1.2rem;
+    }
+
+    .sub-nav-link {
+        font-size: 1.2rem;
+    }
+
+    .faqs-title {
+        font-size: 3rem;
+    }
 }
