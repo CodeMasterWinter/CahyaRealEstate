@@ -15,6 +15,7 @@ def home(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             sender_name = request.POST['full_name']
+            sender_name = request.POST['full_name']
             sender_company = request.POST['company']
             sender_email = request.POST['email']
             sender_phone = request.POST['phone']
@@ -24,12 +25,12 @@ def home(request):
 
             try:
 
-                sender_message = f"Email Address: {sender_email}\nPhone: {sender_phone}\n\n{sender_message}"
+                sender_message = f"Email Address: {sender_email}\nPhone: {sender_phone}\n\nMessage:\n{sender_message}"
                 send_mail(
-                    f'''{sender_name} from {sender_company} wants to {sender_service} {sender_property}''',
+                    f'''{sender_name} from {sender_company} wants to {sender_service} their {sender_property}''',
                     sender_message,
                     sender_email,
-                    ['rhulanimogotsi@gmail.com', 'karabomogotsikm@gmail.com']
+                    ['rhulanimogotsi@gmail.com', 'rhulanimogotsi28@gmail.com']
                 )
 
                 messages.success(request, 'We got your Message! One of our agents will reach out soon!')

@@ -10,7 +10,7 @@ services = [('sell', 'I want to SELL...'),
 
 properties = [('apartment', 'an Apartment'),
               ('house', 'a House'),
-              ('loft', 'a Loft'),
+              ('land', 'Land'),
               ('commercial', 'a Commercial Property'),
               ]
 
@@ -20,7 +20,7 @@ class ContactForm(forms.Form):
     full_name = forms.CharField(required=True)
     company = forms.CharField(required=False, label="Company Name (Optional)")
     email = forms.EmailField(required=True)
-    phone = forms.CharField(required=False, label='Phone Number (Optional)')
+    phone = forms.CharField(required=False)
     service = forms.ChoiceField(required=True, choices=services)
     property = forms.ChoiceField(required=True, choices=properties)
     message = forms.CharField(widget=forms.Textarea, required=True)

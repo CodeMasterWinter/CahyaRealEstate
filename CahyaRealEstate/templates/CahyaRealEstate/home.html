@@ -9,7 +9,7 @@
     <!-- Fonts  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,27 +44,21 @@
                         <a href="{% url 'home' %}" class="nav-link mx-4">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link mx-4">About Us</a>
+                        <a href="#company" class="nav-link sub-link mx-4">About Us</a>
                         <ul class="sub-list p-2 m-0">
                             <li class="sub-list-item">
-                                <a href="" class="sub-nav-link py-3">Our Company</a></li>
+                                <a href="#company" class="sub-nav-link py-3">Our Company</a>
+                            </li>                            
                             <li class="sub-list-item">
-                                <a href="" class="sub-nav-link py-3">Our Team</a></li>
-                            <li class="sub-list-item">
-                                <a href="#faqs" class="sub-nav-link py-3">FAQs</a></li>
+                                <a href="#faqs" class="sub-nav-link py-3">FAQs</a>
+                            </li>
                         </ul>
                     </li>
                     <li class="nav-item">
+                        <a href="#team" class="nav-link mx-4">Our Team</a>
+                    </li>
+                    <li class="nav-item">
                         <a href="#contact" class="nav-link mx-4">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link mx-4">Buy</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link mx-4">Rent</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link sell mx-4">Sell</a>
                     </li>
                 </ul>
             </nav>
@@ -80,54 +74,127 @@
             </div>
         </div>
     </header>
-    <section id="faqs">
-        <div class="container-xl faqs-container">
-            <h1 class="faqs-title m-0 pt-4">Frequently Asked Questions</h1>
-            <div class="faqs-explanation">
-                <h1 class="faqs-explanation-title py-4">
-                    <i class="fa-solid fa-circle-question px-3"></i>So What is an FAQ?
+    <section id="company">
+        <div class="container-fluid company-container p-0">
+            <div class="company-header px-5">
+                <h1 class="company-header-title">
+                    We sell houses,<br>
+                    <span>We build homes</span>
                 </h1>
-                <p class="faqs-explanation-text">
-                    An FAQ, or a Frequently Asked Question, is a question that a lot of people 
-                    who have visited the site before you have asked. So we've compiled the answers
-                    to any questions you may have RIGHT HERE!<br>
-                    <span>If you cannot find the answers you need, please reach out using our <a href="#contact">contact</a> form.</span>
+                <p class="company-header-text">
+                    Established in 2024, Lorem ipsum dolor sit amet, 
+                    consectetur adipisicing elit. Ipsum facilis quidem 
+                    quis placeat cum repudiandae deserunt magni quae 
+                    magnam totam assumenda, veritatis accusantium 
+                    doloremque laboriosam reiciendis consequatur 
+                    voluptas. Facere nostrum, perferendis, sed fuga 
+                    quod pariatur nesciunt porro facilis sunt autem 
+                    officia. Doloribus, dolores consequatur? Tempora 
+                    corporis quam ullam repellendus cum, voluptates 
+                    eveniet dicta tenetur esse distinctio totam, nisi 
+                    provident eos?
                 </p>
             </div>
-            <div class="accordion" id="faq-accordion">
+            <div class="company-accolades">
+
+            </div>
+        </div>
+    </section>
+    <section id="team">
+        <div class="container-fluid team-container">
+            <h1 class="team-header m-0 pt-5">Our team of <span>Agents</span></h1>
+            <p class="team-tagline mx-auto">
+                A dedicated team of agents, all dedicated to helping you find your dream home.
+            </p>
+            <div class="row executive-row py-3 mt-5">
+                <div class="executive-card">
+                    <div class="executive-img">
+                        <img src="{% static 'CahyaRealEstate/images/team/team-karabo.jpeg' %}">
+                    </div>
+                    <div class="executive-info mx-2">
+                        <p class="executive-name m-0">Karabo Mogotsi</p>
+                        <p class="executive-title m-0">Founder & CEO</p>
+                        <p class="executive-location m-0">
+                            <i class="fa-solid fa-location-dot mx-2"></i>
+                            johannesburg
+                        </p>
+                    </div>
+                </div>
+                <div class="executive-card">
+                    <div class="executive-img">
+
+                    </div>
+                    <div class="executive-info">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="faqs">
+        <div class="container-xl faqs-container">
+            <h1 class="faqs-title m-0 pt-4">Frequently Asked Questions<i class="fa-solid fa-circle-question mx-4"></i></h1>
+            <p class="faqs-explanation">
+                If you cannot find the answers you need, please reach out using our <a href="#contact">contact</a> form.
+            </p>
+            <div class="accordion accordion-flush" id="faq-accordion">
                 <div class="accordion-item">
                   <h2 class="accordion-header">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                      Accordion Item #1
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Is it better to <span>rent</span> or <span>buy</span> right now?
                     </button>
                   </h2>
-                  <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                  <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                      <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus explicabo necessitatibus vitae, incidunt fugit amet deserunt natus excepturi veritatis at adipisci quos! Hic nostrum labore saepe assumenda consectetur maxime dolorem.
                     </div>
                   </div>
                 </div>
                 <div class="accordion-item">
                   <h2 class="accordion-header">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                      Accordion Item #2
+                        How can I estimate the <span>market value</span> of my property before selling it?
                     </button>
                   </h2>
                   <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                      <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus explicabo necessitatibus vitae, incidunt fugit amet deserunt natus excepturi veritatis at adipisci quos! Hic nostrum labore saepe assumenda consectetur maxime dolorem.
                     </div>
                   </div>
                 </div>
                 <div class="accordion-item">
                   <h2 class="accordion-header">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                      Accordion Item #3
+                        What are the <span>typical costs</span> involved when buying a home, and <span>can they be negotiated?</span>
                     </button>
                   </h2>
                   <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                      <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus explicabo necessitatibus vitae, incidunt fugit amet deserunt natus excepturi veritatis at adipisci quos! Hic nostrum labore saepe assumenda consectetur maxime dolorem.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+                        What are the advantages of working with a real estate agent versus trying to sell my home on my own?
+                    </button>
+                  </h2>
+                  <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus explicabo necessitatibus vitae, incidunt fugit amet deserunt natus excepturi veritatis at adipisci quos! Hic nostrum labore saepe assumenda consectetur maxime dolorem.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseThree">
+                      Accordion Item #5
+                    </button>
+                  </h2>
+                  <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus explicabo necessitatibus vitae, incidunt fugit amet deserunt natus excepturi veritatis at adipisci quos! Hic nostrum labore saepe assumenda consectetur maxime dolorem.
                     </div>
                   </div>
                 </div>
@@ -158,7 +225,7 @@
                 </div>
                 <div class="col-6 form-block p-3">
                     <label for="id_phone">Phone Number (Optional):</label>
-                    <input type="text" name="phone" id="id_phone" placeholder="Type here">
+                    <input type="tel" name="phone" id="id_phone" placeholder="Type here">
                 </div>
                 <div class="col-6 form-block p-3">
                     <label for="id_service">Service:</label>
@@ -174,7 +241,7 @@
                     <select name="property" id="id_property">
                         <option value="apartment">an Apartment</option>
                         <option value="house">a House</option>
-                        <option value="loft">a Loft</option>
+                        <option value="land">Land</option>
                         <option value="commercial">a Commercial Property</option>
                     </select>
                 </div>
@@ -189,6 +256,7 @@
         </div>
         {% if messages %}
             <ul class="messages p-3 m-0">
+                <i class="fa-solid fa-circle-check message-icon"></i>
                 {% for message in messages %}
                 <li class="message">{{ message }}</li>
                 {% endfor %}

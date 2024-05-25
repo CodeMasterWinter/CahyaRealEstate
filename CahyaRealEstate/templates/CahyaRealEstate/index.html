@@ -35,18 +35,26 @@
     <header id="header">
         <div class="container-fluid header-container p-0">
             <nav>
-                <a href="/" class="logo-block p-3">
-                    <img src="{% static 'CahyaRealEstate/images/nav-logo.png' %}">
+                <a href="/" class="logo-block py-1">
+                    <img src="{% static 'CahyaRealEstate/images/brand/logo-slim-mixed-light.png' %}">
                 </a>
                 <ul class="nav-list p-0 m-0">
                     <li class="nav-item">
                         <a href="{% url 'home' %}" class="nav-link mx-4">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link mx-4">About</a>
+                        <a href="#" class="nav-link mx-4">About Us</a>
+                        <ul class="sub-list p-2 m-0">
+                            <li class="sub-list-item">
+                                <a href="" class="sub-nav-link py-3">Our Company</a></li>
+                            <li class="sub-list-item">
+                                <a href="" class="sub-nav-link py-3">Our Team</a></li>
+                            <li class="sub-list-item">
+                                <a href="#faqs" class="sub-nav-link py-3">FAQs</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link mx-4">Contact</a>
+                        <a href="#contact" class="nav-link mx-4">Contact</a>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link mx-4">Buy</a>

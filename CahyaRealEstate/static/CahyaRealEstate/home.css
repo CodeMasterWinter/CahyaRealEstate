@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Bebas Neue';
+    font-family: 'Bebas Neue', 'Crimson Pro';
     box-sizing: border-box;
 }
 
@@ -80,6 +80,20 @@ nav {
     align-items: center;
 }
 
+.sub-link::before {
+    top: 50%;
+    width: 0;
+    height: 0;
+    content: '';
+    right: -.75rem;
+    position: absolute;
+    transform: translateY(-50%);
+    border-top: 4px solid #f6f4f1;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    transition: border-top .3s ease, transform .3s ease;
+}
+
 .sub-list {
     opacity: 0;
     left: 2rem;
@@ -120,6 +134,12 @@ nav {
     opacity: 1;
     visibility: visible;
 }
+
+.nav-item:hover .sub-link::before {
+    transform: rotate(180deg);
+    border-top: 4px solid #CFA18A;
+}
+
 
 .nav-link.sell {
     width: 6rem;
@@ -213,10 +233,131 @@ nav {
     background-color: #ffffff;
 }
 
+#company {
+    height: 100vh;
+}
+
+.company-container {
+    height: 100%;
+}
+
+.company-header {
+    height: 50%;
+    display: flex;
+}
+
+.company-header-title {
+    width: 50%;
+    display: flex;
+    font-size: 8rem;
+    color: #3d3b3a;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.company-header-title span {
+    color: #CFA18A;
+}
+
+.company-header-text {
+    width: 50%;
+    display: flex;
+    color: #3d3b3a;
+    font-size: 1.6rem;
+    align-items: center;
+    font-family: 'Crimson Pro', 'Bebas Neue';
+}
+
+.company-accolades {
+    height: 50%;
+}
+
+#team {
+    height: 100vh;
+    background-color: #f6f4f1;
+}
+
+.team-container {
+    height: 100%;
+}
+
+.team-header {
+    display: block;
+    font-size: 6rem;
+    color: #3d3b3a;
+    text-align: center;
+}
+
+.team-header span {
+    color: #CFA18A;
+}
+
+.team-tagline {
+    width: 35%;
+    font-size: 1.6rem;
+    text-align: center;
+    font-family: 'Crimson Pro', 'Bebas Neue';
+}
+
+.team-tagline span {
+    color: #CFA18A;
+    font-family: inherit;
+}
+
+.executive-row {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.executive-card {
+    width: 25rem;
+    height: 10rem;
+    display: flex;
+    align-items: center;
+    border-radius: 1rem;
+    background-color: #ffffff;
+    justify-content: space-evenly;
+    border: .1rem solid #CFA18A;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+
+.executive-info {
+    width: 50%;
+}
+
+.executive-name {
+    font-size: 1.6rem;
+    font-family: 'Crimson Pro';
+}
+
+.executive-title {
+    font-size: 1.2rem;
+    font-family: 'Crimson Pro';
+}
+
+.executive-location {
+    opacity: .5;
+    font-family: 'Crimson Pro';
+}
+
+.executive-img {
+    width: 8rem;
+    height: 8rem;
+    padding: .2rem;
+    overflow: hidden;
+    border-radius: 50%;
+    border: .2rem solid #CFA18A;
+}
+
+.executive-img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
 #faqs {
     height: 100vh;
     position: relative;
-    background-color: #f6f4f1;
 }
 
 .faqs-header {
@@ -227,7 +368,7 @@ nav {
 }
 
 .faqs-container {
-    height: calc(100% - 7rem);
+    height: 100%;
 }
 
 .faqs-logo {
@@ -254,25 +395,65 @@ nav {
     text-align: center;
 }
 
-.faqs-explanation {
-    text-align: center;
-}
-
 .faqs-explanation-title {
     font-size: 3rem;
     color: #CFA18A;
 }
 
-.faqs-explanation-text {
-    font-size: 2rem;
+.faqs-explanation {
+    font-size: 1.6rem;
+    color: #3d3b3a;
+    text-align: center;
+    font-family: 'Crimson Pro', 'Bebas Neue';
 }
 
-.faqs-explanation-text span {
+.faqs-explanation a {
     color: #CFA18A;
+    font-weight: 700;
+    font-family: inherit;
+    text-decoration: none;
 }
 
-.faqs-explanation-text a {
+#faq-accordion {
+    margin-top: 5rem;
+    background: transparent;
+}
+
+.accordion-button {
+    outline: none;
+    font-size: 1.6rem;
+    background-color: transparent;
+    border: .2rem solid #CFA18A;
+    border-radius: .4rem !important;
+    font-family: 'Crimson Pro', 'Bebas Neue';
+}
+
+.accordion-button span {
     color: #CFA18A;
+    font-weight: 700;
+    margin-inline: .25rem;
+    font-family: inherit;
+}
+
+.accordion-button.collapsed {
+    box-shadow: none;
+    background-color: transparent !important;
+}
+
+.accordion-button:not(.collapsed) {
+    box-shadow: none;
+    background-color: transparent !important;
+}
+
+.accordion-item {
+    border: none;
+    margin-block: 1.5rem;
+    background-color: transparent;
+}
+
+.accordion-body {
+    font-size: 1.2rem;
+    font-family: 'Crimson Pro', 'Bebas Neue';
 }
 
 #contact {
@@ -372,9 +553,14 @@ nav {
     animation: pop-up 1.5s ease-in-out forwards;
 }
 
-.message {
+.message, .message-icon{
+    text-align: center;
     color: #ffffff;
-    font-size: 1.2rem;
+    font-size: 1.6rem;
+}
+
+.message-icon {
+    width: 100%;
 }
 
 @media screen and (max-width: 1366px) {
@@ -384,6 +570,13 @@ nav {
     
     .header-tagline {
         font-size: 6rem;
+    }
+
+    .company-header-title {
+        font-size: 6rem;
+    }
+    .company-header-text {
+        font-size: 1.2rem;
     }
 
     .contact-tag {
@@ -406,6 +599,18 @@ nav {
     }
 
     .faqs-title {
-        font-size: 3rem;
+        font-size: 5rem;
+    }
+
+    #faq-accordion {
+        margin-top: 3rem;
+    }
+    
+    .accordion-item {
+        margin-block: 1rem;
+    }
+
+    .accordion-button {
+        font-size: 1.2rem;
     }
 }
