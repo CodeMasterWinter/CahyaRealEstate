@@ -1,0 +1,725 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Bebas Neue', 'Crimson Pro';
+    box-sizing: border-box;
+}
+
+#splash {
+    z-index: 10;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    display: none;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    background-color: #272727;
+    transition: opacity .5s ease-out, visibility .5s ease-out;
+}
+
+.splash-logo, .splash-establish-date{
+    animation: fade-in 3s ease, scale-up 3s ease;
+}
+
+.splash-establish-date {
+    bottom: 2rem;
+    color: #CFA18A;
+    position: absolute;
+    font-family: 'Cinzel';
+}
+
+header {
+    height: 90vh;
+    position: relative;
+    background: url(images/header-background.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.header-container {
+    width: 100%;
+    height: 100%;
+    background: #0000002f;
+}
+
+nav {
+    z-index: 3;
+    height: 7rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-block {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.logo-block img {
+    height: 100%;
+    object-fit: contain;
+    transition: transform .3s ease;
+}
+
+.logo-block img:hover {
+    transform: scale(.95);
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    height: max-content;
+}
+
+.nav-item {
+    display: flex;
+    position: relative;
+    text-align: center;
+    align-items: center;
+}
+
+.sub-link::before {
+    top: 50%;
+    width: 0;
+    height: 0;
+    content: '';
+    right: -.75rem;
+    position: absolute;
+    transform: translateY(-50%);
+    border-top: 4px solid #f6f4f1;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    transition: border-top .3s ease, transform .3s ease;
+}
+
+.sub-list {
+    opacity: 0;
+    left: 2rem;
+    top: 2.4rem;
+    min-width: 12rem;
+    list-style: none;
+    visibility: hidden;
+    position: absolute;
+    border-radius: .2rem;
+    background-color: #f6f4f1;
+    transition: opacity .3s ease, visibility .3s ease;
+}
+
+.sub-nav-link {
+    display: block;
+    color: #CFA18A;
+    font-size: 1.4rem;
+    border-radius: .1rem;
+    text-decoration: none;
+    transition: background-color .3s ease, color .3s ease;
+}
+
+.sub-nav-link:hover { 
+    color: #ffffff;
+    background-color: #CFA18A;
+}
+
+.nav-link, .nav-link:visited {
+    color: #ffffff;
+    position: relative;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    font-family: 'Bebas Neue';
+    transition: transform .3s ease, color .3s ease;
+}
+
+.active-link {
+    color: #CFA18A !important;
+}
+
+.nav-item:hover .sub-list {
+    opacity: 1;
+    visibility: visible;
+}
+
+.nav-item:hover .sub-link::before {
+    transform: rotate(180deg);
+    border-top: 4px solid #CFA18A;
+}
+
+
+.nav-link.sell {
+    width: 6rem;
+    height: 2.7rem;
+    display: flex;
+    color: #ffffff;
+    align-items: center;
+    border-radius: .4rem;
+    justify-content: center;
+    background-color: #CFA18A;
+    border: .15rem solid #ffffff;
+    transition: background-color .3s ease, color .3s ease;
+}
+
+.nav-link.sell:hover {
+    transform: none;
+    color: #CFA18A;
+    background-color: #ffffff;
+    
+}
+
+.nav-link.sell::after {
+    display: none;
+}
+
+.nav-link:hover {
+    color: #ffffff;
+    transform: translateX(.5rem);
+}
+
+.nav-link::after {
+    left: 0;
+    width: 0;
+    bottom: 0;
+    height: 2px;
+    content: '';
+    position: absolute;
+    background-color: #CFA18A;
+    transition: width .3s ease;
+}
+
+.nav-link:hover::after, .active-link::after{
+    width: 100%;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: calc(100% - 7rem);
+}
+
+.header-tagline {
+    font-size: 7rem;
+    color: #ffffff;
+}
+
+.header-tagline span {
+    font-weight: 700;
+    color: #CFA18A;
+    font-style: italic;
+}
+    
+.header-button-wrapper {
+    flex: .18;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-button {
+    width: 16rem;
+    display: flex;
+    height: 6rem;
+    font-size: 2rem;
+    color: #ffffff;
+    border-radius: 1rem;
+    align-items: center;
+    text-decoration: none;
+    justify-content: center;
+    background-color: #CFA18A;
+    transition: background-color .3s ease, color .3s ease;
+}
+
+.header-button:hover {
+    color: #CFA18A;
+    background-color: #ffffff;
+}
+
+#company {
+    height: 100%;
+    padding: 3rem;
+    position: relative;
+}
+
+.company-logo {
+    height: 6rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.company-logo img {
+    height: 100%;
+}
+
+.company-container {
+    height: calc(100% - 6rem);
+    display: flex;
+    margin-top: 4rem;
+    justify-content: space-evenly;
+}
+
+.company-welcome {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    border-radius: 1rem;
+    background-color: #CFA18A;
+}
+
+.company-welcome img {
+    width: 100%;
+}
+
+.company-blocks {
+    width: 40%;
+    padding-inline: 2rem;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.company-block hr {
+    opacity: 1;
+    width: 70%;
+    margin-top: 0;
+    border-radius: 2px;
+    border: 2px solid #CFA18A;
+}
+
+.block-title {
+    font-size: 5rem;
+    color: #3d3b3a;
+}
+
+.company-statement {
+    color: #3d3b3a;
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-family: 'Crimson Pro', 'Bebas Neue';
+}
+
+#team {
+    height: 100vh;
+    padding: 3rem;
+    background-color: #f6f4f1;
+}
+
+.team-container {
+    display: flex;
+    margin-top: 3rem;
+    align-items: center;
+    flex-direction: column;
+}
+
+.team-header {
+    display: block;
+    font-size: 6rem;
+    color: #3d3b3a;
+    text-align: center;
+}
+
+.team-header span {
+    color: #CFA18A;
+}
+
+.team-tagline {
+    width: 35%;
+    font-size: 1.6rem;
+    text-align: center;
+    font-family: 'Crimson Pro', 'Bebas Neue';
+}
+
+.team-tagline span {
+    color: #CFA18A;
+    font-family: inherit;
+}
+
+.middle-row {
+    width: 100%;
+    margin-block: 2rem;
+    justify-content: space-evenly;
+}
+
+.executive-card {
+    width: 25rem;
+    height: 10rem;
+    display: flex;
+    align-items: center;
+    border-radius: 1rem;
+    background-color: #ffffff;
+    justify-content: space-evenly;
+    border: .1rem solid #CFA18A;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+
+.executive-info {
+    width: 50%;
+}
+
+.executive-name {
+    font-size: 1.6rem;
+    font-family: 'Crimson Pro';
+}
+
+.executive-title {
+    font-size: 1.2rem;
+    font-family: 'Crimson Pro';
+}
+
+.executive-location {
+    opacity: .5;
+    font-family: 'Crimson Pro';
+}
+
+.executive-img {
+    width: 8rem;
+    height: 8rem;
+    padding: .2rem;
+    overflow: hidden;
+    border-radius: 50%;
+    border: .2rem solid #CFA18A;
+}
+
+.executive-img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+#faqs {
+    height: 100vh;
+    position: relative;
+}
+
+.faqs-container {
+    height: 100%;
+}
+
+.faqs-title {
+    font-size: 7rem;
+    color: #3d3b3a;
+    text-align: center;
+}
+
+.faqs-explanation {
+    font-size: 1.6rem;
+    color: #3d3b3a;
+    text-align: center;
+    font-family: 'Crimson Pro', 'Bebas Neue';
+}
+
+.faqs-explanation a {
+    color: #CFA18A;
+    font-weight: 700;
+    font-family: inherit;
+    text-decoration: none;
+}
+
+#faq-accordion {
+    margin-top: 5rem;
+    background: transparent;
+}
+
+.accordion-button {
+    outline: none;
+    font-size: 1.6rem;
+    background-color: transparent;
+    border: .2rem solid #CFA18A;
+    border-radius: .4rem !important;
+    font-family: 'Crimson Pro', 'Bebas Neue';
+}
+
+.accordion-button span {
+    color: #CFA18A;
+    font-weight: 700;
+    margin-inline: .25rem;
+    font-family: inherit;
+}
+
+.accordion-button.collapsed {
+    box-shadow: none;
+    background-color: transparent !important;
+}
+
+.accordion-button:not(.collapsed) {
+    box-shadow: none;
+    background-color: transparent !important;
+}
+
+.accordion-item {
+    border: none;
+    margin-block: 1.5rem;
+    background-color: transparent;
+}
+
+.accordion-body {
+    font-size: 1.2rem;
+    font-family: 'Crimson Pro', 'Bebas Neue';
+}
+
+#contact {
+    height: 100vh;
+    background-color: #f6f4f1;
+}
+
+.contact-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    border: 1px solid #CFA18A;
+}
+
+.contact-text {
+    width: 30%;
+    height: 100%;
+}
+
+.contact-tag {
+    height: 25%;
+    display: block;
+    font-size: 11rem;
+    color: #CFA18A;
+    font-family: 'Bebas Neue';
+}
+
+.contact-tag.second, .contact-tag.fourth {
+    color: #3d3b3a;
+    text-align: right;
+}
+
+#contact-form {
+    width: 70%;
+}
+
+.form-block {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.form-block label {
+    font-size: 2rem;
+    color: #3d3b3a;
+    font-family: 'Bebas Neue';
+}
+
+.form-block input, 
+.form-block select, 
+.form-block textarea {
+    border: none;
+    padding: .5rem;
+    outline: none;
+    background: none;
+    color: #3d3b3a;
+    font-size: 1.5rem;
+    border-color: #3d3b3a;
+    font-family: 'Bebas Neue';
+    border-bottom: .2rem dotted;
+    transition: border-color .3s ease;
+}
+
+.form-block input:focus, 
+.form-block select:focus, 
+.form-block textarea:focus {
+    border-color: #CFA18A;
+}
+
+#contact-submit {
+    border: none;
+    outline: none;
+    font-size: 2rem;
+    color: #ffffff;
+    min-height: 3.6rem;
+    border-radius: .2rem;
+    font-family: 'Bebas Neue';
+    background-color: #CFA18A;
+    border: .2rem solid #CFA18A;
+    transition: background-color .3s ease, color .3s ease;
+}
+
+#contact-submit:hover {
+    color: #CFA18A;
+    background-color: transparent;
+}
+
+.messages {
+    right: 3rem;
+    height: 10rem;
+    width: 18rem;
+    bottom: 3rem;
+    position: fixed;
+    list-style: none;
+    border-radius: .4rem;
+    background-color: #CFA18A;
+    animation: pop-up 1.5s ease-in-out forwards;
+}
+
+.message, .message-icon{
+    text-align: center;
+    color: #ffffff;
+    font-size: 1.6rem;
+}
+
+.message-icon {
+    width: 100%;
+}
+
+/* Lenis */
+
+html.lenis, html.lenis body {
+    height: auto;
+}
+
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+    pointer-events: none;
+}
+
+/* Mobile - Portrait */
+@media screen and (min-width: 240px) and (max-width: 428px) {
+
+}
+
+/* Tablet Portrait */
+@media screen and (min-width: 429px) and (max-width: 810px) {
+    
+}
+
+/* Tablet - Landscape */
+@media screen and (min-width: 811px) and (max-width: 1080px) {
+    
+}
+
+/* laptop */
+
+@media screen and (min-width: 1081px) and (max-width: 1366px) {
+    
+    .logo-block {
+        align-items: center;
+    }
+
+    .logo-block img {
+        height: 90%;
+    }
+
+    .header-tagline {
+        font-size: 6rem;
+    }
+
+    #company {
+        height: 100vh;
+    }
+
+    .company-logo {
+        height: 4rem;
+    }
+
+    .company-blocks {
+        width: 40%;
+        padding-inline: 1.2rem;
+    }
+    
+    .company-block hr {
+        opacity: 1;
+        width: 70%;
+        margin-top: 0;
+        border-radius: 2px;
+        border: 2px solid #CFA18A;
+    }
+    
+    .block-title {
+        font-size: 3.6rem;
+        color: #3d3b3a;
+    }
+    
+    #company {
+        padding: 2rem;
+    }
+
+    .company-container {
+        padding: 0;
+        margin-top: 2rem;
+    }
+
+    .company-statement {
+        font-size: 1rem;
+    }
+
+    #team {
+        padding: 2rem;
+    }
+    
+    .team-container {
+        margin-top: 2rem;
+    }
+    
+    .team-header {
+        font-size: 5rem;
+    }
+
+    .team-tagline {
+        width: 30%;
+        font-size: 1.2rem;
+    }
+
+    .middle-row {
+        width: 100%;
+    }
+    
+    .executive-card {
+        width: 18rem;
+        height: 7rem;
+    }
+    
+    .executive-name {
+        font-size: 1.2rem;
+    }
+    
+    .executive-title {
+        font-size: 1rem;
+    }
+    
+    .executive-img {
+        width: 5.6rem;
+        height: 5.6rem;
+        padding: .2rem;
+    }
+
+    #faqs {
+        height: 100%;
+        min-height: 100vh;
+    }
+
+    .faqs-title {
+        font-size: 5rem;
+    }
+
+    .faqs-title i {
+        display: none;
+    }
+
+    .faqs-explanation {
+        font-size: 1.2rem;
+    }
+
+    #faq-accordion {
+        margin-top: 3rem;
+    }
+
+    .accordion-button {
+        font-size: 1.2rem;
+    }
+
+    .contact-tag {
+        font-size: 8rem;
+    }
+}

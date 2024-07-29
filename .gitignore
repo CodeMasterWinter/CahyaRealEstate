@@ -1,0 +1,7 @@
+.idea/
+CahyaRealEstate/__pycache__/
+virtual/
+db.sqlite3
+CahyaRealEstate/Scripts/__pycache__/
+CahyaRealEstate/migrations/__pycache__/
+CahyaRealEstate/migrations
