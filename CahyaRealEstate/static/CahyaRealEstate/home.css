@@ -5,30 +5,6 @@
     box-sizing: border-box;
 }
 
-#splash {
-    z-index: 10;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    display: none;
-    position: fixed;
-    align-items: center;
-    justify-content: center;
-    background-color: #272727;
-    transition: opacity .5s ease-out, visibility .5s ease-out;
-}
-
-.splash-logo, .splash-establish-date{
-    animation: fade-in 3s ease, scale-up 3s ease;
-}
-
-.splash-establish-date {
-    bottom: 2rem;
-    color: #CFA18A;
-    position: absolute;
-    font-family: 'Cinzel';
-}
-
 header {
     height: 90vh;
     position: relative;
@@ -44,7 +20,7 @@ header {
 
 nav {
     z-index: 3;
-    height: 7rem;
+    height: 6rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -481,7 +457,7 @@ nav ul li:hover .sub-link::before {
 .contact-text span {
     height: 25%;
     display: block;
-    font-size: 6.8rem;
+    font-size: 7rem;
     color: #CFA18A;
     font-family: 'Bebas Neue';
 }
@@ -589,19 +565,4 @@ html.lenis, html.lenis body {
 
 .lenis.lenis-scrolling iframe {
     pointer-events: none;
-}
-
-/* Mobile - Portrait */
-@media screen and (min-width: 240px) and (max-width: 428px) {
-
-}
-
-/* Tablet Portrait */
-@media screen and (min-width: 429px) and (max-width: 810px) {
-    
-}
-
-/* Tablet - Landscape */
-@media screen and (min-width: 811px) and (max-width: 1080px) {
-    
 }

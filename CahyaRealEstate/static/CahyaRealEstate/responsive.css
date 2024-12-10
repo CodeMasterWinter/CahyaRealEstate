@@ -1,0 +1,90 @@
+/* Mobile - Portrait */
+@media screen and (min-width: 240px) and (max-width: 428px) {
+
+}
+
+/* Tablet Portrait */
+@media screen and (min-width: 429px) and (max-width: 810px) {
+    
+}
+
+/* Tablet - Landscape */
+@media screen and (min-width: 811px) and (max-width: 1080px) {
+    
+}
+
+/* Desktop */
+@media screen and (min-width: 1367px) {
+    .header-content h1 {
+        font-size: 8rem;
+    }
+
+    #company {
+        padding: 3rem;
+    }
+
+    .company-logo {
+        height: 6rem;
+    }
+
+    .company-block h1 {
+        font-size: 5rem;
+        color: #3d3b3a;
+    }
+
+    .company-block p span{
+        display: block;
+        font-family: 'Crimson Pro';
+    }
+
+    .team-header {
+        height: 10rem;
+    }
+
+    .team-header h1 {
+        font-size: 5rem;
+    }
+
+    .team-header p {
+        font-size: 1.6rem;
+    }
+
+    .middle-row {
+        margin-block: 2rem;
+    }
+
+    .executive-card {
+        width: 20rem;
+        height: 10rem;
+    }
+
+    #faqs {
+        height: 100%;
+        padding: 3rem;
+    }
+
+    .faqs-header h1 {
+        font-size: 5rem;
+    }
+
+    .faqs-header p,
+    .accordion-button {
+        font-size: 1.6rem;
+    }
+
+    #faq-accordion {
+        margin-top: 5rem;
+    }
+
+    .contact-text span {
+        font-size: 10rem;
+    }
+
+    .form-block label {
+        font-size: 2rem;
+    }
+
+    #contact-submit {
+        height: 40%;
+    }
+}
