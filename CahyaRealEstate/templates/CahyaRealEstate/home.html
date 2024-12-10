@@ -30,31 +30,31 @@
                 <a href="/" class="logo-block py-1">
                     <img src="{% static 'CahyaRealEstate/images/brand/logo-slim-mixed-light.png' %}">
                 </a>
-                <ul class="nav-list p-0 m-0">
-                    <li class="nav-item">
+                <ul>
+                    <li>
                         <a href="{% url 'home' %}" class="nav-link mx-4 animate__animated animate__fadeInRight">Home</a>
                     </li>
-                    <li class="nav-item animate__animated animate__fadeInRight">
+                    <li class="animate__animated animate__fadeInRight">
                         <a href="#company" class="nav-link sub-link mx-4">About Us</a>
                         <ul class="sub-list p-2 m-0">
-                            <li class="sub-list-item">
-                                <a href="#company" class="sub-nav-link py-3">Our Company</a>
+                            <li>
+                                <a href="#company" class="py-3">Our Company</a>
                             </li>                            
-                            <li class="sub-list-item">
-                                <a href="#faqs" class="sub-nav-link py-3">FAQs</a>
+                            <li>
+                                <a href="#faqs" class="py-3">FAQs</a>
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-item animate__animated animate__fadeInRight">
+                    <li class="animate__animated animate__fadeInRight">
                         <a href="#team" class="nav-link mx-4">Our Team</a>
                     </li>
-                    <li class="nav-item animate__animated animate__fadeInRight">
+                    <li class="animate__animated animate__fadeInRight">
                         <a href="#contact" class="nav-link mx-4">Contact</a>
                     </li>
                 </ul>
             </nav>
             <div class="header-content">
-                <h1 class="header-tagline m-0 animate__animated animate__fadeInUp">
+                <h1 class="animate__animated animate__fadeInUp">
                     Making Dreams<br>
                     a reality<br>
                     <span>with Realty</span>
@@ -75,40 +75,48 @@
                 <img src="{% static 'CahyaRealEstate\images\brand\logo-tagline.png' %}" alt="">
             </div>
             <div class="company-blocks">
-                <div class="company-block">
-                    <h1 class="block-title">Our Mission</h1>
+                <div class="company-block mb-4">
+                    <h1>Our Mission</h1>
                     <hr>
-                    <p class="company-statement">
+                    <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                         Deserunt excepturi delectus odit, blanditiis aperiam esse 
                         voluptatibus impedit dolorum obcaecati rem voluptas ipsam 
-                        natus quasi, nemo atque, magnam ut ad mollitia saepe! Velit 
-                        enim temporibus reprehenderit, in nostrum maiores architecto, 
-                        iste, praesentium aut id facilis libero veritatis fugiat 
-                        doloremque quidem impedit.
+                        natus quasi, nemo atque, magnam ut ad mollitia saepe!              
+                        <span>
+                            Velit 
+                            enim temporibus reprehenderit, in nostrum maiores architecto, 
+                            iste, praesentium aut id facilis libero veritatis fugiat 
+                            doloremque quidem impedit.
+                        </span>
                     </p>
                 </div>
                 <div class="company-block">
-                    <h1 class="block-title">Our Vision</h1>
+                    <h1>Our Vision</h1>
                     <hr>
-                    <p class="company-statement">
+                    <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                         Deserunt excepturi delectus odit, blanditiis aperiam esse 
                         voluptatibus impedit dolorum obcaecati rem voluptas ipsam 
-                        natus quasi, nemo atque, magnam ut ad mollitia saepe! Velit 
-                        enim temporibus reprehenderit, in nostrum maiores architecto, 
-                        iste, praesentium aut id facilis libero veritatis fugiat 
-                        doloremque quidem impedit.
+                        natus quasi, nemo atque, magnam ut ad mollitia saepe!              
+                        <span>
+                            Velit 
+                            enim temporibus reprehenderit, in nostrum maiores architecto, 
+                            iste, praesentium aut id facilis libero veritatis fugiat 
+                            doloremque quidem impedit.
+                        </span>
                     </p>
                 </div>
             </div>
         </div>
     </section>
     <section id="team">
-        <h1 class="team-header m-0">Our team of <span>Agents</span></h1>
-        <p class="team-tagline mx-auto">
-            A dedicated team of agents, all dedicated to helping you find your dream home.
-        </p>
+        <div class="team-header">
+            <h1 class="m-0">Our team of <span>Agents</span></h1>
+            <p>
+                A dedicated team of agents, all dedicated to helping you find <span>your dream home.</span>
+            </p>
+        </div>
         <div class="container-fluid team-container">
             <div class="row">
                 <div class="executive-card">
@@ -250,10 +258,12 @@
     </section>
     <section id="faqs">
         <div class="container-xl faqs-container">
-            <h1 class="faqs-title m-0 pt-4">Frequently Asked Questions<i class="fa-solid fa-circle-question mx-4"></i></h1>
-            <p class="faqs-explanation">
-                If you cannot find the answers you need, please reach out using our <a href="#contact">contact</a> form.
-            </p>
+            <div class="faqs-header">
+                <h1 class="m-0 pt-4">Frequently Asked Questions<i class="fa-solid fa-circle-question mx-4"></i></h1>
+                <p>
+                    If you cannot find the answers you need, please reach out using our <a href="#contact">contact</a> form.
+                </p>
+            </div>
             <div class="accordion accordion-flush" id="faq-accordion">
                 <div class="accordion-item">
                   <h2 class="accordion-header">
@@ -319,12 +329,12 @@
         </div>
     </section>
     <section id="contact" class="p-5">
-        <div class="container-fluid contact-container p-4">
+        <div class="container-fluid contact-container p-0">
             <div class="contact-text">
-                <span class="contact-tag first px-5">Reach</span>
-                <span class="contact-tag second px-5">out,</span>
-                <span class="contact-tag third px-5">let's</span>
-                <span class="contact-tag fourth px-5">talk</span>
+                <span class="first px-5">Reach</span>
+                <span class="second px-5">out,</span>
+                <span class="third px-5">let's</span>
+                <span class="fourth px-5">talk</span>
             </div>
             <form id="contact-form" action="{% url 'home' %}" method="post" class="row p5">
                 {% csrf_token %}

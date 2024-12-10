@@ -66,13 +66,13 @@ nav {
     transform: scale(.95);
 }
 
-.nav-list {
+nav ul {
     display: flex;
     list-style: none;
     height: max-content;
 }
 
-.nav-item {
+nav ul li {
     display: flex;
     position: relative;
     text-align: center;
@@ -97,17 +97,19 @@ nav {
     opacity: 0;
     left: 2rem;
     top: 2.4rem;
+    display: flex;
     min-width: 12rem;
     list-style: none;
     visibility: hidden;
     position: absolute;
     border-radius: .2rem;
+    flex-direction: column;
     background-color: #f6f4f1;
     transition: opacity .3s ease, visibility .3s ease;
 }
 
-.sub-nav-link {
-    display: block;
+.sub-list li a {
+    width: 100%;
     color: #CFA18A;
     font-size: 1.4rem;
     border-radius: .1rem;
@@ -115,17 +117,16 @@ nav {
     transition: background-color .3s ease, color .3s ease;
 }
 
-.sub-nav-link:hover { 
+.sub-list li a:hover { 
     color: #ffffff;
     background-color: #CFA18A;
 }
 
 .nav-link, .nav-link:visited {
     color: #ffffff;
-    position: relative;
     font-size: 1.4rem;
+    position: relative;
     text-transform: uppercase;
-    font-family: 'Bebas Neue';
     transition: transform .3s ease, color .3s ease;
 }
 
@@ -133,16 +134,15 @@ nav {
     color: #CFA18A !important;
 }
 
-.nav-item:hover .sub-list {
+nav ul li:hover .sub-list {
     opacity: 1;
     visibility: visible;
 }
 
-.nav-item:hover .sub-link::before {
+nav ul li:hover .sub-link::before {
     transform: rotate(180deg);
     border-top: 4px solid #CFA18A;
 }
-
 
 .nav-link.sell {
     width: 6rem;
@@ -195,12 +195,12 @@ nav {
     height: calc(100% - 7rem);
 }
 
-.header-tagline {
-    font-size: 7rem;
+.header-content h1 {
+    font-size: 6rem;
     color: #ffffff;
 }
 
-.header-tagline span {
+.header-content h1 span {
     font-weight: 700;
     color: #CFA18A;
     font-style: italic;
@@ -270,10 +270,10 @@ nav {
 
 .company-blocks {
     width: 40%;
-    padding-inline: 2rem;
     display: flex;
-    justify-content: space-evenly;
+    padding-inline: 2rem;
     flex-direction: column;
+    justify-content: space-evenly;
 }
 
 .company-block hr {
@@ -284,16 +284,19 @@ nav {
     border: 2px solid #CFA18A;
 }
 
-.block-title {
-    font-size: 5rem;
+.company-block h1 {
     color: #3d3b3a;
 }
 
-.company-statement {
+.company-block p {
     color: #3d3b3a;
     font-size: 1.2rem;
     font-weight: 600;
-    font-family: 'Crimson Pro', 'Bebas Neue';
+    font-family: 'Crimson Pro';
+}
+
+.company-block p span{
+    display: none;
 }
 
 #team {
@@ -302,34 +305,38 @@ nav {
     background-color: #f6f4f1;
 }
 
+.team-header {
+    height: 7rem;
+    text-align: center;
+}
+
+.team-header h1 {
+    display: block;
+    color: #3d3b3a;
+    font-size: 3.6rem;
+    text-align: center;
+}
+
+.team-header h1 span {
+    color: #CFA18A;
+}
+
+.team-header p {
+    font-size: 1.2rem;
+    text-align: center;
+    font-family: 'Crimson Pro';
+}
+
+.team-header p span {
+    color: #CFA18A;
+    font-family: inherit;
+}
+
 .team-container {
     display: flex;
     margin-top: 3rem;
     align-items: center;
     flex-direction: column;
-}
-
-.team-header {
-    display: block;
-    font-size: 6rem;
-    color: #3d3b3a;
-    text-align: center;
-}
-
-.team-header span {
-    color: #CFA18A;
-}
-
-.team-tagline {
-    width: 35%;
-    font-size: 1.6rem;
-    text-align: center;
-    font-family: 'Crimson Pro', 'Bebas Neue';
-}
-
-.team-tagline span {
-    color: #CFA18A;
-    font-family: inherit;
 }
 
 .middle-row {
@@ -393,20 +400,20 @@ nav {
     height: 100%;
 }
 
-.faqs-title {
-    font-size: 7rem;
+.faqs-header h1 {
+    font-size: 5rem;
     color: #3d3b3a;
     text-align: center;
 }
 
-.faqs-explanation {
+.faqs-header p {
     font-size: 1.6rem;
     color: #3d3b3a;
     text-align: center;
     font-family: 'Crimson Pro', 'Bebas Neue';
 }
 
-.faqs-explanation a {
+.faqs-header p a {
     color: #CFA18A;
     font-weight: 700;
     font-family: inherit;
@@ -472,15 +479,15 @@ nav {
     height: 100%;
 }
 
-.contact-tag {
+.contact-text span {
     height: 25%;
     display: block;
-    font-size: 11rem;
+    font-size: 6.8rem;
     color: #CFA18A;
     font-family: 'Bebas Neue';
 }
 
-.contact-tag.second, .contact-tag.fourth {
+.contact-text span.second, .contact-text span.fourth {
     color: #3d3b3a;
     text-align: right;
 }
@@ -496,7 +503,7 @@ nav {
 }
 
 .form-block label {
-    font-size: 2rem;
+    font-size: 1.6rem;
     color: #3d3b3a;
     font-family: 'Bebas Neue';
 }

@@ -17,7 +17,7 @@ a **Python Django** Web App.
 4. in the terminal, run 'pip install -r requirements.txt' to install all prerequisite modules.
 
 ### Usage
-This repo does not contain any of the databases requirede for functionality. Therefore, migrations must be made.
+This repo does not contain any of the databases required for functionality. Therefore, migrations must be made.
 In the terminal, run 'python manage.py makemigrations' to add model objects to the database.
 
 ### Credits
