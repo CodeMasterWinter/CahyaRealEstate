@@ -1,0 +1,226 @@
+/* Mobile - Portrait */
+@media screen and (min-width: 240px) and (max-width: 428px) {
+
+}
+
+/* Tablet Portrait */
+@media screen and (min-width: 429px) and (max-width: 810px) {
+    
+    #company {
+        height: 100%;
+    }
+
+    .company-logo {
+        height: 6rem;
+        padding: 1rem;
+    }
+
+    .company-container {
+        flex-direction: column;
+    }
+
+    .company-welcome {
+        width: 100%;
+        height: 30%;
+    }
+
+    .company-blocks {
+        width: 100%;
+        padding-inline: .5rem;
+        margin-block: 2rem;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .company-block {
+        width: 48%
+    }
+    
+    .company-block h1 {
+        font-size: 3rem;
+    }
+
+    #faqs {
+        height: 100%;
+    }
+    
+    #faq-accordion {
+        padding: 2rem;
+    }
+
+    #special-break {
+        display: block;
+    }
+    
+    .contact-container {
+        flex-direction: column;
+    }
+
+    .contact-text {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        height: min-content;
+        justify-content: space-evenly;
+    }
+
+    .contact-text span {
+        font-size: 6rem;
+        height: fit-content;
+        display: inline-block;
+    }
+
+    #contact {
+        height: 100%;
+    }
+
+    #contact-form {
+        width: 100%;
+        padding: 1rem;
+        align-self: center;
+    }
+}
+
+/* Tablet - Landscape */
+@media screen and (min-width: 811px) and (max-width: 1080px) {
+    
+    header {
+        height: 70vh;
+    }
+
+    nav ul {
+        margin: 0;
+    }
+
+    .logo-block {
+        display: flex;
+        align-items: center;
+    }
+
+    .logo-block img {
+        height: 70%;
+        object-fit: contain;
+        transition: transform .3s ease;
+    }
+
+    .header-content h1 {
+        font-size: 4rem;
+    }
+    
+    #company {
+        height: 100%;
+    }
+
+    .company-container {
+        margin-top: 2rem;
+    }
+
+    .company-welcome {
+        height: 100%;
+    }
+
+    .company-block p {
+        font-size: 1rem;
+    }
+
+    #team {
+        height: 100%;
+    }
+
+    .executive-card {
+        width: 18rem;
+        height: 7rem;
+    }
+
+    .executive-img {
+        width: 5rem;
+        height: 5rem;
+    }
+
+    #faqs {
+        height: 100%;
+        padding: 2rem;
+    }
+
+    #contact-submit {
+        height: 40%;
+    }
+
+}
+
+/* Desktop */
+@media screen and (min-width: 1367px) {
+    .header-content h1 {
+        font-size: 8rem;
+    }
+
+    #company {
+        padding: 3rem;
+    }
+
+    .company-logo {
+        height: 6rem;
+    }
+
+    .company-block h1 {
+        font-size: 5rem;
+        color: #3d3b3a;
+    }
+
+    .company-block p span{
+        display: block;
+        font-family: 'Crimson Pro';
+    }
+
+    .team-header {
+        height: 10rem;
+    }
+
+    .team-header h1 {
+        font-size: 5rem;
+    }
+
+    .team-header p {
+        font-size: 1.6rem;
+    }
+
+    .middle-row {
+        margin-block: 2rem;
+    }
+
+    .executive-card {
+        width: 20rem;
+        height: 10rem;
+    }
+
+    #faqs {
+        height: 100%;
+        padding: 0rem;
+    }
+
+    .faqs-header h1 {
+        font-size: 5rem;
+    }
+
+    .faqs-header p,
+    .accordion-button {
+        font-size: 1.6rem;
+    }
+
+    #faq-accordion {
+        margin-block: 3rem;
+        margin-top: 0;
+    }
+
+    .contact-text span {
+        font-size: 10rem;
+    }
+
+    .form-block label {
+        font-size: 2rem;
+    }
+
+    #contact-submit {
+        height: 40%;
+    }
+}
