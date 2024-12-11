@@ -1,0 +1,2 @@
+# Ignore CSS files in language statistics
+*.css linguist-detectable=false
