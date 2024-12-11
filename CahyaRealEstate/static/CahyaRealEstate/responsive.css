@@ -6,6 +6,79 @@
 /* Tablet Portrait */
 @media screen and (min-width: 429px) and (max-width: 810px) {
     
+    #company {
+        height: 100%;
+    }
+
+    .company-logo {
+        height: 6rem;
+        padding: 1rem;
+    }
+
+    .company-container {
+        flex-direction: column;
+    }
+
+    .company-welcome {
+        width: 100%;
+        height: 30%;
+    }
+
+    .company-blocks {
+        width: 100%;
+        padding-inline: .5rem;
+        margin-block: 2rem;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .company-block {
+        width: 48%
+    }
+    
+    .company-block h1 {
+        font-size: 3rem;
+    }
+
+    #faqs {
+        height: 100%;
+    }
+    
+    #faq-accordion {
+        padding: 2rem;
+    }
+
+    #special-break {
+        display: block;
+    }
+    
+    .contact-container {
+        flex-direction: column;
+    }
+
+    .contact-text {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        height: min-content;
+        justify-content: space-evenly;
+    }
+
+    .contact-text span {
+        font-size: 6rem;
+        height: fit-content;
+        display: inline-block;
+    }
+
+    #contact {
+        height: 100%;
+    }
+
+    #contact-form {
+        width: 100%;
+        padding: 1rem;
+        align-self: center;
+    }
 }
 
 /* Tablet - Landscape */

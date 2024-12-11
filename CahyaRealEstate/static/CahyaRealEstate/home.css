@@ -385,6 +385,10 @@ nav ul li:hover .sub-link::before {
     text-align: center;
 }
 
+#special-break {
+    display: none;
+}
+
 .faqs-header p {
     font-size: 1.2rem;
     color: #3d3b3a;
@@ -455,6 +459,7 @@ nav ul li:hover .sub-link::before {
 .contact-text {
     width: 30%;
     height: 100%;
+    padding-inline: 1rem;
 }
 
 .contact-text span {

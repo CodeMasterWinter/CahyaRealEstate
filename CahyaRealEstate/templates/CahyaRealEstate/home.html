@@ -293,7 +293,7 @@
                 <div class="accordion-item">
                   <h2 class="accordion-header">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        What are the <span>typical costs</span> involved when buying a home, and <span>can they be negotiated?</span>
+                        What are the typical costs involved when buying a home, and can they be negotiated?
                     </button>
                   </h2>
                   <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
@@ -332,12 +332,12 @@
     <section id="contact" class="p-5">
         <div class="container-fluid contact-container p-0">
             <div class="contact-text">
-                <span class="first px-5">Reach</span>
-                <span class="second px-5">out,</span>
-                <span class="third px-5">let's</span>
-                <span class="fourth px-5">talk</span>
+                <span class="first">Reach</span>
+                <span class="second">out,</span>
+                <span class="third">let's</span>
+                <span class="fourth">talk</span>
             </div>
-            <form id="contact-form" action="{% url 'home' %}" method="post" class="row p5">
+            <form id="contact-form" action="{% url 'home' %}" method="post" class="row">
                 {% csrf_token %}
                 <div class="col-6 form-block p-3">
                     <label for="id_full_name">Full name:</label>
