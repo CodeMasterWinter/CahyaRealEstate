@@ -14,7 +14,6 @@ def home(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             sender_name = request.POST['full_name']
-            sender_name = request.POST['full_name']
             sender_company = request.POST['company']
             sender_email = request.POST['email']
             sender_phone = request.POST['phone']
