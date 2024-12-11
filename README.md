@@ -1,3 +1,4 @@
+![Cahya Real Estate banner](staticfiles/CahyaRealEstate/images/brand/banner.png)
 # Cahya Real Estate
 
 Cahya Real Estate is a new-age real estate company that aims to combat economic inflation
