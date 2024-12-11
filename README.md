@@ -1,5 +1,7 @@
 # Cahya Real Estate
-### The Official repository for the Cahya Real Estate website
+
+Cahya Real Estate is a new-age real estate company that aims to combat economic inflation
+by providing quality affordable housing to citizens of all economic classes.
 
 This repository houses all the relevant files for the Cahya Real Estate website,
 a **Python Django** Web App.
